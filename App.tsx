@@ -14,6 +14,7 @@ import {Provider} from 'react-redux';
 import {store} from './src/store/store';
 import {MessageComponent} from './src/components/Message';
 import {Card} from './src/components/Card';
+import {Users} from './src/components/UserComponent';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <SafeAreaView style={styles.sectionContainer}>
         <MessageComponent />
         <Card />
+        <Users />
       </SafeAreaView>
     </Provider>
   );

@@ -3,13 +3,15 @@ import {ActivityIndicator, View, Button, Text, StyleSheet} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchUsers} from '../store/services/fetchUsers ';
 import {UserData} from '../interfaces/UserData';
+import {RootState} from '../store/store';
 
 export const Users = () => {
   const dispatch = useDispatch();
-  const {users, loading} = useSelector((state: any) => state.users);
+  const {users, loading} = useSelector((state: RootState) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
